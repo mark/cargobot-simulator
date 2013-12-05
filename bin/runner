@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+Bundler.require(:default)
+
+$:.unshift 'lib'
+
+require 'cargo_bot'
+
+level_name = ARGV[0]
+delay      = ARGV[1]
+
+$delay = delay ? delay.to_f : 0.25
+
+require "./puzzles/#{ level_name }"
